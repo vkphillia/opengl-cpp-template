@@ -8,10 +8,12 @@
             "args": [
                 "-g",
                 "-std=c++17",
-                "-I./include",
-                "-L./lib",
-                "src/\\*.cpp",
-                "src/glad.c",
+                // ISSUE: problem in some OS regarding "fatal error: glad/glad.h not found."
+		// SOL.: use the workspace directory path variable here:
+    		"-I${workspaceFolder}/include",
+		"-L${workspaceFolder}/lib",				
+		"${workspaceFolder}/src/\\*.cpp",				
+		"${workspaceFolder}/src/glad.c",
                 "-lglfw3dll",
                 "-o",
                 "${workspaceFolder}/myprogram.exe"
