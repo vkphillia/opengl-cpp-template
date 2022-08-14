@@ -4,19 +4,19 @@
         {
             "type": "shell",
             "label": "C/C++: g++.exe build active file",
-            "command": "C:\\Program Files (x86)\\mingw-w64\\i686-8.1.0-posix-dwarf-rt_v6-rev0\\mingw32\\bin\\g++.exe",
+            "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
             "args": [
                 "-g",
                 "-std=c++17",
                 // ISSUE: problem in some OS regarding "fatal error: glad/glad.h not found."
-		// SOL.: use the workspace directory path variable here:
-    		"-I${workspaceFolder}/include",
-		"-L${workspaceFolder}/lib",				
-		"${workspaceFolder}/src/\\*.cpp",				
-		"${workspaceFolder}/src/glad.c",
+		        // SOL.: use the workspace directory path variable here:
+    		    "-I${workspaceFolder}\\include",
+		        "-L${workspaceFolder}\\lib",				
+                "${workspaceFolder}\\src\\*.cpp",				
+                "${workspaceFolder}\\src\\glad.c",
                 "-lglfw3dll",
                 "-o",
-                "${workspaceFolder}/myprogram.exe"
+                "${workspaceFolder}\\myprogram.exe"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
